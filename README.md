@@ -1,13 +1,8 @@
 <div align="center">
 
-  <table><tr>
-    <td align="center"><img src="docs/images/logo_uniba.png" alt="UNIBA" height="100"></td>
-    <td align="center"><img src="docs/images/logo_serlab_cropped.png" alt="SERLAB" height="60"></td>
-    <td align="center"><img src="docs/images/logo_leaf_cropped.jpg" alt="LEAF Mobility" height="110"></td>
-    <td align="center"><img src="docs/images/logo_sungroup.png" alt="SunGroup" height="110"></td>
-  </tr></table>
+  <img src="docs/images/combined_logos_rounded.png" alt="UNIBA · SERLAB · LEAF Mobility · SunGroup" width="700">
 
-  <br>
+  <br><br>
 
   <p>La piattaforma definitiva per la gestione e la fruizione della mobilità urbana sostenibile.</p>
 
