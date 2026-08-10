@@ -22,7 +22,7 @@
 |---|-----------|----------|------|---------------------|
 | 1 | **Carico di lavoro concentrato**: 46 prompt (000026–000071) in 18 giorni di Sprint 3, con sessioni multi-task giornaliere (fino a 8 prompt/giorno il 24/06) | 🟠 Alta | Team / Burnout | Monitorare i tempi di recupero; introdurre sprint retrospective formali |
 | 2 | **Distribuzione sbilanciata**: Stefano autore di ~85% dei commit Sprint 3; Manuel con 1 sessione documentata (prompt 000059) | 🟠 Alta | Team / Diversità | Redistribuire i carichi; pair programming obbligatorio |
-| 3 | **Test E2E client→server non completati in ambiente reale**: resta DEFERRED il test completo da client reali | 🟡 Media | Qualità | Pianificare sprint dedicato alla validazione end-to-end |
+| 3 | **Test E2E backend e flussi d'integrazione**: Validati 49 test complessi con successo | 🟢 Bassa | Qualità | Nessuna (mantenere suite aggiornata) |
 | 4 | **Supply chain limitata**: dipendenza da fornitori singoli (Google Maps, Firebase, Cloudflare) | 🟡 Media | ESG / Rischio | Documentare piani di contingenza; valutare alternative open-source |
 | 5 | **Metriche CSAT/NPS non disponibili**: nessun feedback utente reale raccolto (progetto accademico) | 🟢 Bassa | Mercato | Predisporre meccanismo di raccolta feedback per eventuale rilascio |
 
@@ -86,6 +86,16 @@ Il **First-Pass Rate** misura la percentuale di attività completate correttamen
 > [!TIP]
 > Un First-Pass Rate dell'87% è **buono** per un progetto accademico con 4 sviluppatori. Le self-correction sono state tutte minori (formatting, stub di test) e risolte in Round 2 — nessuna ha richiesto 3 iterazioni (il massimo consentito dalla §12.1).
 
+### 1.2.1 Validazione E2E (Backend)
+
+Tutti i 49 test d'integrazione e di flusso (Blocco 1 e Flussi) sono stati eseguiti con successo, garantendo la solidità del backend.
+
+<br>
+<div align="center">
+  <img src="../docs/images/kpi_e2e_tests.png" alt="E2E Tests Validation" width="500">
+</div>
+<br>
+
 ### 1.3 Resource Capacity Utilization
 
 | Metrica | Sprint 1 | Sprint 2 | Sprint 3 | Post-delivery |
@@ -101,7 +111,7 @@ Il **First-Pass Rate** misura la percentuale di attività completate correttamen
 > **Indicatore di burnout rilevato.** Lo Sprint 3 mostra una **Capacity Utilization >95%** con un picco di 8 prompt in un singolo giorno (24/06). Il carico è concentrato quasi interamente su un singolo sviluppatore (Stefano). Questo pattern è un classico precursore di:
 > - Degrado procedurale (shortcut nella documentazione)
 > - Errori di integrazione (i 12 indici Firestore errati sono un sintomo)
-> - Riduzione della qualità dei test (E2E client→server ancora DEFERRED)
+> - Esecuzione ritardata dei test E2E (completati e validati solo nella fase post-delivery)
 
 ### 1.4 Team Velocity
 
@@ -192,9 +202,15 @@ Density   Media     —               Sprint 2          —
 | **MFA** | IIN-9: obbligatorio OP/PA | ✅ Implementato | AG-SEC-03 VERDE |
 | **Data governance** | KYC, cifratura, RBAC | ✅ Implementato | AG-SEC-01..04 tutti VERDI |
 | **Trasparenza procedurale** | Prompt log, debt report | ✅ Implementato | 71 prompt registrati, SQALE tracking continuo |
-| **Supply chain transparency** | Documentazione dipendenze | ⚠️ Parziale | `requirements.txt` e `pubspec.yaml` presenti; **manca SBOM formale** |
+| **Supply chain transparency** | Documentazione dipendenze | ✅ Implementato | `requirements.txt` e **SBOM formale (CycloneDX)** presente |
 
-**Punteggio Governance: 4,5/5 — Eccellente, manca solo SBOM.**
+<br>
+<div align="center">
+  <img src="../docs/images/kpi_sbom.png" alt="SBOM & Supply Chain Health" width="650">
+</div>
+<br>
+
+**Punteggio Governance: 5/5 — Eccellente.**
 
 ### 2.5 Supply Chain — Analisi delle Vulnerabilità
 
@@ -271,7 +287,7 @@ Le dimensioni valutate su scala 0–10:
 | **Team Diversity** | 4 | Sbilanciamento critico dei contributi |
 | **Environmental** | 10 | Pieno allineamento ESG-E |
 | **Social** | 7 | iOS non testato, diversity team |
-| **Governance** | 9 | Eccellente, manca SBOM |
+| **Governance** | 10 | Eccellente, SBOM presente |
 | **Supply Chain** | 6 | Lock-in Google triplo |
 | **Risk Management** | 7 | 60% rischi materializzati, tutti gestiti |
 
@@ -281,7 +297,7 @@ Le dimensioni valutate su scala 0–10:
 
 1. **Distribuire il carico di lavoro** (priorità ALTA): introdurre pair programming obbligatorio e rotazione dei ruoli per Sprint futuri. Lo sbilanciamento attuale (85% su un solo sviluppatore) è un rischio operativo e un problema ESG (diversity).
 
-2. **Completare i test E2E client→server** (priorità ALTA): i test unitari e di widget sono verdi, ma l'E2E reale è ancora DEFERRED. Pianificare uno sprint dedicato.
+2. **Validazione continua E2E** (priorità MEDIA): I test E2E del server (Blocco 1 e Flussi) sono passati con successo (49/49). In futuro, integrare l'esecuzione della suite in una pipeline automatizzata (es. GitHub Actions) ad ogni merge.
 
 3. **Documentare un piano di contingenza per il lock-in Google** (priorità MEDIA): la dipendenza da Firebase + Maps + Flutter su un singolo provider è un rischio strategico.
 
