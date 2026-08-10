@@ -458,12 +458,6 @@ Di seguito i principali risultati raggiunti al termine dello Sprint 3:
   <img src="docs/images/kpi_line.png" alt="Evoluzione Debito Tecnico" width="700">
 </div>
 
-### 💰 Efficienza Finanziaria (Budget Sprint)
-
-<div align="center">
-  <img src="docs/images/kpi_budget.png" alt="Utilizzo Budget" width="500">
-</div>
-
 > [!WARNING]
 > **Aree di miglioramento operativo:** Durante lo Sprint 3 si è registrata una *Resource Capacity Utilization* superiore al 95% e uno sbilanciamento nella contribuzione del team. Questi indicatori suggeriscono l'adozione futura di sessioni obbligatorie di Pair Programming per mitigare il rischio di burnout.
 
