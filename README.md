@@ -436,21 +436,15 @@ Di seguito i principali risultati raggiunti al termine dello Sprint 3:
 
 ### 🕸️ Equilibrio Tecnico, Team ed ESG
 
-| Area di Analisi | Punteggio Cumulato | Impatto Relativo |
-|---|:---:|:---:|
-| **Metriche ESG e Rischi** | 39 | 44% |
-| **Metriche Tecniche (Qualità, Debito)** | 34 | 38% |
-| **Dinamiche del Team (Velocity, Carico)** | 16 | 18% |
+<div align="center">
+  <img src="docs/images/kpi_pie.png" alt="Composizione del Punteggio Globale" width="600">
+</div>
 
 ### 📉 Evoluzione del Debito Tecnico (SQALE)
 
-| Frequenza Rilevamento | Fase | Rating SQALE | Debt Ratio | Trend |
-|---|---|:---:|:---:|---|
-| **W1 (Inizio Progetto)** | Baseline | 🔴 **D** | 24,0% | — |
-| **W2 (Metà Sprint 1)** | Sprint 1 | 🟠 **C** | 20,0% | 📉 -4,0% |
-| **W4 (Fine Sprint 2)** | Sprint 2 | 🟠 **C** | 15,0% | 📉 -5,0% |
-| **W6 (Metà Sprint 3)** | Sprint 3 | 🟡 **B** | 8,0% | 📉 -7,0% |
-| **W9 (Post-Delivery)** | Consegna | 🟢 **A** | **3,8%** | 📉 -4,2% |
+<div align="center">
+  <img src="docs/images/kpi_line.png" alt="Evoluzione Debito Tecnico" width="700">
+</div>
 
 > [!WARNING]
 > **Aree di miglioramento operativo:** Durante lo Sprint 3 si è registrata una *Resource Capacity Utilization* superiore al 95% e uno sbilanciamento nella contribuzione del team. Questi indicatori suggeriscono l'adozione futura di sessioni obbligatorie di Pair Programming per mitigare il rischio di burnout.
