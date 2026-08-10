@@ -434,6 +434,12 @@ Di seguito i principali risultati raggiunti al termine dello Sprint 3:
 - **Metriche ESG (Environmental & Governance):** Punteggio pieno sull'impatto ambientale (grazie al monitoraggio CO₂ e alla flotta 100% elettrica) e ottima governance dei dati (Audit, MFA, RBAC).
 - **Gestione dei Rischi:** Il 60% dei rischi identificati (es. debito tecnico elevato, problemi di deployment) si è materializzato, ma è stato gestito abbassando l'impatto residuo al minimo.
 
+### 🛡️ Qualità del Rilascio (First-Pass Rate)
+
+<div align="center">
+  <img src="docs/images/kpi_first_pass.png" alt="First-Pass Rate dei Gate CI/CD" width="500">
+</div>
+
 ### 🕸️ Equilibrio Tecnico, Team ed ESG
 
 <div align="center">
