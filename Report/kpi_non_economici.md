@@ -12,6 +12,10 @@
 > **Stato complessivo del progetto: VERDE con riserve operative.**
 > Il progetto LEAF Mobility è stato consegnato il 29/06/2026 con tutti i gate CI/CD e sicurezza verdi. Il debito tecnico SQALE è sceso da **rating D (24%)** a **rating A (3,8%)** nel corso dello sviluppo. Tuttavia, emergono indicatori precoci di pressione sul team e aree di miglioramento ESG che richiedono attenzione nella fase post-delivery.
 
+<div align="center">
+  <img src="../docs/images/kpi_radar.png" alt="Radar Chart ISO 25000" width="500">
+</div>
+
 ### Criticità Operative Non Finanziarie Evidenziate
 
 | # | Criticità | Severità | Area | Azione Raccomandata |
@@ -21,6 +25,12 @@
 | 3 | **Test E2E client→server non completati in ambiente reale**: resta DEFERRED il test completo da client reali | 🟡 Media | Qualità | Pianificare sprint dedicato alla validazione end-to-end |
 | 4 | **Supply chain limitata**: dipendenza da fornitori singoli (Google Maps, Firebase, Cloudflare) | 🟡 Media | ESG / Rischio | Documentare piani di contingenza; valutare alternative open-source |
 | 5 | **Metriche CSAT/NPS non disponibili**: nessun feedback utente reale raccolto (progetto accademico) | 🟢 Bassa | Mercato | Predisporre meccanismo di raccolta feedback per eventuale rilascio |
+
+<br>
+<div align="center">
+  <img src="../docs/images/kpi_pie.png" alt="Composizione Punteggio Globale" width="600">
+</div>
+<br>
 
 ---
 
@@ -66,6 +76,12 @@ Il **First-Pass Rate** misura la percentuale di attività completate correttamen
 | Mobile (analyze/test) | 8 sessioni CI | 7 | 1 (FakeAuth stub) | **87,5%** |
 | Web (analyze/test) | 7 sessioni CI | 7 | 0 | **100%** |
 | **Complessivo** | **23** | **20** | **3** | **87%** |
+
+<br>
+<div align="center">
+  <img src="../docs/images/kpi_first_pass.png" alt="First Pass Rate" width="600">
+</div>
+<br>
 
 > [!TIP]
 > Un First-Pass Rate dell'87% è **buono** per un progetto accademico con 4 sviluppatori. Le self-correction sono state tutte minori (formatting, stub di test) e risolte in Round 2 — nessuna ha richiesto 3 iterazioni (il massimo consentito dalla §12.1).
