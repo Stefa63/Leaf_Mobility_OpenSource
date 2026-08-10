@@ -115,6 +115,12 @@ Il **First-Pass Rate** misura la percentuale di attività completate correttamen
 > [!CAUTION]
 > La velocity dello Sprint 3 è **4x** quella dello Sprint 1 e **2,7x** la media. Questo **non è sostenibile** e indica un fenomeno noto come **"Velocity Mirage"** (citato nelle slide ITPS del corso, `raw/05_ITPS_Processi_Agili_SCRUM_2026.pptx.pdf`): una velocity apparentemente alta che maschera accumulo di debito tecnico e pressione eccessiva.
 
+<br>
+<div align="center">
+  <img src="../docs/images/kpi_workload.png" alt="Workload Trend & Burnout Risk" width="600">
+</div>
+<br>
+
 ### 1.5 Incrocio Carico–Qualità
 
 ```
@@ -128,6 +134,12 @@ Density   Media     —               Sprint 2          —
 ```
 
 **Osservazione:** Sebbene la Defect Density assoluta resti bassa (0,63/KLOC), il numero di difetti **raddoppia** quando la Resource Utilization supera l'85%. Il 71% dei difetti rilevati (10 su 14) si è manifestato in Sprint 3, quando il carico era massimo.
+
+<br>
+<div align="center">
+  <img src="../docs/images/kpi_correlation.png" alt="Correlazione Carico vs Qualità" width="500">
+</div>
+<br>
 
 ---
 
