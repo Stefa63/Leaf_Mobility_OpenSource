@@ -1,0 +1,48 @@
+name: CI / CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test-python-server:
+    name: Server Tests (Python)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          cd server
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest pytest-cov
+      - name: Run Pytest
+        run: |
+          cd server
+          cp .env.example .env
+          pytest -v
+
+  test-flutter-client:
+    name: Client Tests (Flutter)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.x'
+          channel: 'stable'
+      - name: Install Flutter Dependencies
+        run: |
+          cd client/app_mobile_utente
+          flutter pub get
+      - name: Run Flutter Tests
+        run: |
+          cd client/app_mobile_utente
+          flutter test

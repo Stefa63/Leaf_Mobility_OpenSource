@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Configurazione di sicurezza di rete dell'app utente LEAF Mobility.
+
+  Scopo: consentire il traffico in CHIARO (HTTP) verso il server in fase di
+  sviluppo/test su rete LAN (es. http://192.168.1.60:8770/api/v1 o l'emulatore
+  10.0.2.2), pur mantenendo HTTPS per il dominio pubblico di produzione esposto
+  via tunnel Cloudflare (api.leafmobility.org).
+
+  Nota: Android 9+ (API 28) blocca il cleartext per impostazione predefinita.
+  La "Modalità sviluppatore" dell'app permette di puntare l'app a un server LAN
+  in HTTP: questa policy è ciò che rende quel traffico possibile sull'APK reale.
+-->
+<network-security-config>
+    <!-- Default: il traffico in chiaro è permesso (necessario per il debug su LAN
+         con IP arbitrari). La produzione usa comunque HTTPS verso Cloudflare. -->
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

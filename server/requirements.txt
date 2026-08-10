@@ -1,0 +1,44 @@
+# LEAF Mobility — Server (runtime operativo + console operativa). Python 3.11+
+# Installazione in UN SOLO comando (dalla root del repo):
+#     python -m pip install -r server/requirements.txt
+#
+# Stack canonico (wiki/DIRECTIVES.md §6) + strumenti della console operativa.
+
+# --- Runtime / API (Presentation Tier) ---
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.7
+
+# --- Database: Cloud Firestore, accesso SOLO server-side (Integration Tier) ---
+# Usato dal DataAccessManager (firebase-admin); i client non toccano mai Firestore.
+# In sviluppo/test si gira OFFLINE contro l'emulatore o il client fake (nessuna
+# credenziale): vedi server/.env.example (FIRESTORE_EMULATOR_HOST / LEAF_FIREBASE_CRED).
+firebase-admin>=6.5
+# Cifratura AES-256-GCM dei campi sensibili 🔒 a riposo (IIN-4 / AG-SEC-02), incapsulata
+# in integration_tier/data_access_manager/cifratura.py. Attiva SOLO se e' configurata la
+# chiave LEAF_AES_KEY (vedi .env.example); senza chiave il DataAccessManager usa il
+# cifrario passthrough (sviluppo/test/emulatore). Dipendenza approvata (§3).
+cryptography>=43
+
+# --- Sicurezza / credenziali temporanee (provisioning OP) ---
+# Schema pbkdf2_sha256 (puro Python): nessuna dipendenza nativa, compatibile con
+# Python 3.14 (l'accoppiata passlib 1.7 + bcrypt 5.x e' invece rotta su 3.14).
+passlib>=1.7
+PyJWT>=2.8
+
+# --- Console operativa (monitoraggio + TUI stile Claude Code) ---
+psutil>=5.9            # monitor hardware: CPU / RAM / I/O disco / I/O rete
+rich>=13.7            # rendering terminale: tema verde, barre %, tabelle, mascotte
+prompt_toolkit>=3.0   # REPL interattivo con help per-comando
+httpx>=0.27           # client standard verso l'endpoint di controllo (loopback HTTP/JSON)
+py-localtunnel>=1.0   # LEGACY: non più usato (tunnel ora via servizio Windows Cloudflare); rimozione da concordare
+
+# --- Sviluppo / CI (necessari per i gate §12.2 AG-CI-01..04, non per la sola esecuzione) ---
+# Installazione dei soli strumenti CI:  python -m pip install ruff mypy pytest pytest-cov types-psutil
+ruff>=0.6
+mypy>=1.10
+pytest>=8
+pytest-cov>=5
+types-psutil>=5.9   # stub di tipo per psutil (mypy --strict, AG-CI-02)
+types-passlib>=1.7  # stub di tipo per passlib (mypy --strict, AG-CI-02)
+pre-commit>=3.5     # hook locali pre-commit (ruff+mypy); vedi .pre-commit-config.yaml

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!--
+    LEAF Mobility APP ICON — white leaf/wheel symbol on a green squircle.
+    Mirrors logo.svg but inverted for use as the mobile app launcher icon.
+  -->
+  <defs>
+    <path id="leafw"
+      d="M50 14 C55.6 17.2 58 23.8 55.2 30.2 C53.6 34.2 50.8 35 50 30.6 C49.2 35 46.4 34.2 44.8 30.2 C42 23.8 44.4 17.2 50 14 Z"/>
+  </defs>
+
+  <!-- Green squircle background -->
+  <rect x="2" y="2" width="96" height="96" rx="22" ry="22" fill="#34A853"/>
+
+  <g fill="#FFFFFF">
+    <!-- Outer leaf wreath: 12 leaves every 30° -->
+    <use href="#leafw" transform="rotate(0,50,50)"/>
+    <use href="#leafw" transform="rotate(30,50,50)"/>
+    <use href="#leafw" transform="rotate(60,50,50)"/>
+    <use href="#leafw" transform="rotate(90,50,50)"/>
+    <use href="#leafw" transform="rotate(120,50,50)"/>
+    <use href="#leafw" transform="rotate(150,50,50)"/>
+    <use href="#leafw" transform="rotate(180,50,50)"/>
+    <use href="#leafw" transform="rotate(210,50,50)"/>
+    <use href="#leafw" transform="rotate(240,50,50)"/>
+    <use href="#leafw" transform="rotate(270,50,50)"/>
+    <use href="#leafw" transform="rotate(300,50,50)"/>
+    <use href="#leafw" transform="rotate(330,50,50)"/>
+  </g>
+
+  <g fill="none" stroke="#FFFFFF">
+    <!-- Wheel rim -->
+    <circle cx="50" cy="50" r="20" stroke-width="2.6"/>
+    <!-- 6 curved spokes -->
+    <path d="M50 50 Q47.6 40 50 31" stroke-width="2" stroke-linecap="round"/>
+    <path d="M50 50 Q59.6 47.6 67 43" stroke-width="2" stroke-linecap="round"/>
+    <path d="M50 50 Q59.6 52.4 67 57" stroke-width="2" stroke-linecap="round"/>
+    <path d="M50 50 Q52.4 60 50 69" stroke-width="2" stroke-linecap="round"/>
+    <path d="M50 50 Q40.4 52.4 33 57" stroke-width="2" stroke-linecap="round"/>
+    <path d="M50 50 Q40.4 47.6 33 43" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Central leaf -->
+  <path d="M50 33 C56.4 38.6 56.4 47.4 50 52 C43.6 47.4 43.6 38.6 50 33 Z" fill="#FFFFFF"/>
+  <g stroke="#34A853" fill="none" stroke-linecap="round">
+    <line x1="50" y1="35.5" x2="50" y2="50" stroke-width="1.2"/>
+    <line x1="50" y1="41" x2="46" y2="38" stroke-width="0.9"/>
+    <line x1="50" y1="41" x2="54" y2="38" stroke-width="0.9"/>
+  </g>
+
+  <!-- Hub -->
+  <circle cx="50" cy="50" r="3.6" fill="#FFFFFF"/>
+  <circle cx="50" cy="50" r="1.4" fill="#34A853"/>
+</svg>

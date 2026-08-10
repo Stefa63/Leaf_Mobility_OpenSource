@@ -1,0 +1,13 @@
+rules_version = '2';
+
+// Architettura a tre tier (§4): i client NON accedono mai direttamente a Firestore —
+// passano esclusivamente da /api/v1 (Presentation Tier). L'accesso ai dati è solo
+// server-side via firebase-admin (DataAccessManager), che bypassa queste regole.
+// Di conseguenza ogni accesso dal client SDK è negato.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

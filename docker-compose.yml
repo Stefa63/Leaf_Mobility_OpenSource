@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  server:
+    build: 
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: leaf_mobility_server
+    ports:
+      - "8000:8000"
+    environment:
+      # Configurazioni base
+      - LEAF_HOST=0.0.0.0
+      - LEAF_PORT=8000
+      - LEAF_LOG_LEVEL=INFO
+      # - LEAF_CORS_ORIGINS=["*"]
+      # - LEAF_FIRESTORE_PROJECT_ID=leafmobility-test
+      # - LEAF_AES_KEY=your_base64_encoded_32_bytes_key
+    volumes:
+      - ./server:/app
+    restart: unless-stopped

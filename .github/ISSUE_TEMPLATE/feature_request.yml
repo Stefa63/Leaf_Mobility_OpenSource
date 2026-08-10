@@ -1,0 +1,27 @@
+name: Feature Request
+description: Suggerisci un'idea per il progetto
+title: "[FEATURE] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: "Grazie per il tuo interesse a migliorare Leaf Mobility!"
+  - type: textarea
+    id: problem
+    attributes:
+      label: Il tuo problema è legato a una frustrazione?
+      description: Spiega qual è il limite attuale.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Descrivi la soluzione che vorresti
+      description: Una descrizione chiara di cosa vorresti che accadesse.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative considerate
+      description: Hai provato a risolvere il problema in un altro modo?

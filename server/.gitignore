@@ -1,0 +1,17 @@
+# Dati di runtime e artefatti operativi (NON versionati).
+dati/
+backups/
+.env
+*.pid
+*.log
+
+# Credenziali Firebase (service account) — MAI versionare (accesso admin completo).
+*firebase-adminsdk*.json
+leaf-mobility-firebase-adminsdk-fbsvc-02a989c86b.json
+
+# Cache Python.
+__pycache__/
+*.py[cod]
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/

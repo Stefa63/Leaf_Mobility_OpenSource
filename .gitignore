@@ -1,0 +1,54 @@
+# ── LEAF Mobility — .gitignore root ─────────────────────────────────────────
+
+# File di lavoro/scratch non destinati al versionamento
+_ctx.txt
+_i18n_scan.txt
+**/a caso.txt
+.DS_Store
+Thumbs.db
+.obsidian/
+
+# IDE e Editor
+.idea/
+*.iml
+.vscode/
+
+# Python / FastAPI
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.venv/
+venv/
+ENV/
+env/
+.mypy_cache/
+.ruff_cache/
+
+# Ambiente e Sicurezza (Mai committare credenziali!)
+.env
+.env.*
+!.env.example
+*.pem
+leaf-mobility-firebase-*.json
+
+# Flutter / Dart
+.dart_tool/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/android/app/src/main/res/values/secrets.xml
+/ios/Flutter/Generated.xcconfig
+/ios/Flutter/app.flt
+/ios/Flutter/Flutter.framework/
+/ios/Flutter/Flutter.podspec
+/macos/Flutter/Generated.xcconfig
+/macos/Flutter/ephemeral/
+/windows/flutter/ephemeral/
+/linux/flutter/ephemeral/

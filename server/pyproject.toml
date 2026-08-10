@@ -1,0 +1,48 @@
+# LEAF Mobility — configurazione strumenti server (§7.4 di wiki/DIRECTIVES.md).
+# Ruff sostituisce Flake8 + Black + isort; Mypy in modalita' strict.
+
+[project]
+name = "leaf-mobility-server"
+version = "0.1.0"
+description = "LEAF Mobility — runtime operativo a tre tier + console operativa"
+requires-python = ">=3.11"
+authors = [
+  { name="Stefano (Stefa63)" }
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["."]
+
+[tool.ruff.lint]
+# Set di regole allineato agli standard di progetto (ISO 25000 — manutenibilita').
+select = ["E", "F", "I", "N", "UP", "B", "C4", "SIM"]
+ignore = []
+
+[tool.ruff.lint.isort]
+known-first-party = ["server"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+disallow_untyped_defs = true
+# I tier di dominio sono scheletri non ancora cablati al DB: i metodi sono
+# tipizzati ma sollevano NotImplementedError finche' il backend non esiste.
+
+# psutil non distribuisce py.typed: i tipi precisi arrivano da types-psutil
+# (dev dependency). L'override mantiene il gate mypy --strict verde anche dove
+# lo stub non e' installato, senza disseminare "# type: ignore" nel codice.
+[[tool.mypy.overrides]]
+module = ["psutil"]
+ignore_missing_imports = true
+
+# firebase-admin (accesso Firestore server-side) e cryptography (cifratura AES-256,
+# IIN-4) sono importate in modo pigro (importlib) dall'Integration Tier e possono non
+# essere installate nell'ambiente CI runtime/test (che gira offline col client fake).
+# L'override mantiene mypy --strict verde senza "# type: ignore" sparsi.
+[[tool.mypy.overrides]]
+module = ["firebase_admin", "firebase_admin.*", "cryptography.*"]
+ignore_missing_imports = true

@@ -1,0 +1,41 @@
+name: Bug Report
+description: Segnala un malfunzionamento del sistema
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Grazie per aver dedicato del tempo per segnalarci questo problema!"
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrizione del Bug
+      description: Una descrizione chiara e concisa del problema.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Passi per Riprodurre
+      description: Come possiamo riprodurre il problema passo dopo passo?
+      placeholder: |
+        1. Vai su '...'
+        2. Clicca su '....'
+        3. Scorri giù fino a '....'
+        4. Vedi l'errore
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamento Atteso
+      description: Cosa ti saresti aspettato che accadesse?
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Versione/Ambiente
+      description: Es. Versione dell'app, Sistema Operativo, Versione Python
+    validations:
+      required: true

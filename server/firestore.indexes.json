@@ -1,0 +1,115 @@
+{
+  "//": "LEAF Mobility — indici composti Cloud Firestore (Report/analisi_database.md §10.4). Firestore auto-indicizza i campi singoli; qui solo le query multi-campo. Nomi di collezione e campo allineati al modello dati REALE (snake_case) usato da DataAccessManager/collezioni.py. Deploy: firebase deploy --only firestore:indexes",
+  "indexes": [
+    {
+      "//": "Mappa mezzi disponibili per prossimità (O1/O3): stato_operativo + geohash range.",
+      "collectionGroup": "mezzi",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "stato_operativo", "order": "ASCENDING" },
+        { "fieldPath": "geohash", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "//": "Filtro mezzi per tipo + stato + prossimità (UT.05).",
+      "collectionGroup": "mezzi",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "tipo_mezzo", "order": "ASCENDING" },
+        { "fieldPath": "stato_operativo", "order": "ASCENDING" },
+        { "fieldPath": "geohash", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "//": "Storico corse utente ordinato per data (UT.17 / O8). Query reale: gestore_corse.storico_corse (filtro id_utente + order_by data_ora_inizio DESC).",
+      "collectionGroup": "corse",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "id_utente", "order": "ASCENDING" },
+        { "fieldPath": "data_ora_inizio", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "//": "Corse per mezzo ordinate per data (istruttorie/report).",
+      "collectionGroup": "corse",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "id_mezzo", "order": "ASCENDING" },
+        { "fieldPath": "data_ora_inizio", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "//": "Pagamenti per utente ordinati per data (UT.04 / storico).",
+      "collectionGroup": "pagamenti",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "id_utente", "order": "ASCENDING" },
+        { "fieldPath": "data_ora", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "//": "Prenotazioni attive per mezzo (blocco esclusivo §6.9.2).",
+      "collectionGroup": "prenotazioni",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "id_mezzo", "order": "ASCENDING" },
+        { "fieldPath": "stato", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "//": "Coda assistenza per stato ordinata per apertura (OP.08 / O10).",
+      "collectionGroup": "ticket_assistenza",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "stato", "order": "ASCENDING" },
+        { "fieldPath": "data_apertura", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "//": "Ticket manutenzione per stato/priorità (OP.19).",
+      "collectionGroup": "ticket_manutenzione",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "stato", "order": "ASCENDING" },
+        { "fieldPath": "priorita", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "//": "Aree di geofencing attive per tipo (AP.04/06/08 / O11).",
+      "collectionGroup": "aree_limitate",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "stato", "order": "ASCENDING" },
+        { "fieldPath": "tipo", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "//": "Telemetria per mezzo ordinata nel tempo (OP.07/OP.14 / O2). Subcollezione di mezzi (eventi_telemetria).",
+      "collectionGroup": "eventi_telemetria",
+      "queryScope": "COLLECTION_GROUP",
+      "fields": [
+        { "fieldPath": "id_mezzo", "order": "ASCENDING" },
+        { "fieldPath": "timestamp", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "//": "Notifiche non lette per destinatario (IIN-19). Subcollezione di account (notifiche): campo booleano 'letta'.",
+      "collectionGroup": "notifiche",
+      "queryScope": "COLLECTION_GROUP",
+      "fields": [
+        { "fieldPath": "id_destinatario", "order": "ASCENDING" },
+        { "fieldPath": "letta", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "//": "Segnalazioni di emergenza aperte per stato/tempo (UT.20/IIN-18).",
+      "collectionGroup": "segnalazioni_emergenza",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "stato", "order": "ASCENDING" },
+        { "fieldPath": "timestamp", "order": "DESCENDING" }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}
