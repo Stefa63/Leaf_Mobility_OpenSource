@@ -468,14 +468,10 @@ Di seguito i principali risultati raggiunti al termine dello Sprint 3:
   <img src="docs/images/kpi_line.png" alt="Evoluzione Debito Tecnico" width="700">
 </div>
 
-### ⚖️ Dinamiche del Team e Rischi Operativi
+### 📈 Trend dei Prompt e Utilizzo (Workload)
 
 <div align="center">
   <img src="docs/images/kpi_workload.png" alt="Workload Trend" width="600">
-</div>
-
-<div align="center">
-  <img src="docs/images/kpi_correlation.png" alt="Correlazione Carico vs Qualità" width="500">
 </div>
 
 ---
