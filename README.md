@@ -114,6 +114,8 @@ LEAF_Mobility/
 ├── docs/                         # Immagini, loghi e documentazione
 ├── releases/                     # APK rilasciati dell'App Mobile
 ├── Report/                       # Report CI/CD, documentazione Doxygen, debito tecnico
+│   ├── kpi_non_economici.md      # Analisi multidimensionale ESG, team e rischi
+│   └── dashboard_kpi_opensource.py # Dashboard interattiva Plotly/Dash (template)
 ├── wiki/                         # Direttive di progetto
 └── server/
     ├── presentation_tier/        # Controller API (FastAPI) e sicurezza
@@ -418,6 +420,41 @@ ruff check server/
 Considerata l'interazione con hardware IoT e servizi esterni (Google Maps, Cloudflare, Email), durante il collaudo locale:
 - I servizi a pagamento o Black Box (Gateway Pagamenti, SOS, Invio Email, Routing) vengono **mockati** o bypassati tramite implementazioni fittizie.
 - Le interazioni con il database cloud possono essere condotte sull'**Emulatore Firebase** locale per non intaccare i dati di produzione.
+
+---
+
+## 📊 Analisi Multidimensionale (ESG, Qualità e Rischi)
+
+Il progetto LEAF Mobility è stato monitorato lungo tutto il suo ciclo di vita attraverso un set di metriche non puramente ingegneristiche, ma estese alla sostenibilità ambientale, sociale e di governance (ESG). I dati completi sono archiviati in [`Report/kpi_non_economici.md`](Report/kpi_non_economici.md) (e analizzati visivamente dalla dashboard interattiva `Report/dashboard_kpi_opensource.py`).
+
+Di seguito i principali risultati raggiunti al termine dello Sprint 3:
+
+- **Eccellenza Tecnica (Debito SQALE):** Miglioramento dal Rating D (24%) iniziale all'attuale **Rating A (3,8%)**.
+- **First-Pass Rate:** L'87% dei gate automatizzati (20 su 23) è stato superato al primo tentativo.
+- **Metriche ESG (Environmental & Governance):** Punteggio pieno sull'impatto ambientale (grazie al monitoraggio CO₂ e alla flotta 100% elettrica) e ottima governance dei dati (Audit, MFA, RBAC).
+- **Gestione dei Rischi:** Il 60% dei rischi identificati (es. debito tecnico elevato, problemi di deployment) si è materializzato, ma è stato gestito abbassando l'impatto residuo al minimo.
+
+### 🕸️ Equilibrio Tecnico, Team ed ESG
+
+```mermaid
+pie title "Composizione del Punteggio Globale"
+    "Metriche Tecniche (Qualità, Debito)" : 34
+    "Dinamiche del Team (Velocity, Carico)" : 16
+    "Metriche ESG e Rischi" : 39
+```
+
+### 📉 Evoluzione del Debito Tecnico (SQALE)
+
+```mermaid
+xychart-beta
+    title "Andamento Debt Ratio %"
+    x-axis ["W1", "W2", "W3", "W4", "W5", "W6", "W7", "W8", "W9"]
+    y-axis "Debt Ratio %" 0 --> 30
+    line [24.0, 20.0, 16.0, 15.0, 13.0, 8.0, 7.8, 7.8, 3.8]
+```
+
+> [!WARNING]
+> **Aree di miglioramento operativo:** Durante lo Sprint 3 si è registrata una *Resource Capacity Utilization* superiore al 95% e uno sbilanciamento nella contribuzione del team. Questi indicatori suggeriscono l'adozione futura di sessioni obbligatorie di Pair Programming per mitigare il rischio di burnout.
 
 ---
 

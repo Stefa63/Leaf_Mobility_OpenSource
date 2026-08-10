@@ -125,7 +125,10 @@ Leaf_Mobility_OpenSource/
 │   ├── session_cicd_report.md
 │   ├── technical_debt_report.md  ← SQALE debt log (§17)
 │   ├── analisi_database.md       ← database analysis (entities/attributes → E-R → volumes & accesses)
-│   └── architettura_server.md    ← server design: operational runtime + console (§4/§5)
+│   ├── architettura_server.md    ← server design: operational runtime + console (§4/§5)
+│   ├── kpi_economici.md          ← budget and earned value analysis
+│   ├── kpi_non_economici.md      ← ESG, team, risks and operational metrics analysis
+│   └── dashboard_kpi_opensource.py ← open-source Plotly/Dash dashboard template for non-financial KPIs
 ├── wiki/                        # LLM Wiki "second brain" (§19) + directive home — NOT part of the software
 │   └── DIRECTIVES.md            ← THIS FILE (single authoritative canon for all AI agents)
 ├── releases/                    # Pre-compiled APKs
