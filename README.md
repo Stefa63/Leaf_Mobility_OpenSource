@@ -468,18 +468,7 @@ Di seguito i principali risultati raggiunti al termine dello Sprint 3:
   <img src="docs/images/kpi_line.png" alt="Evoluzione Debito Tecnico" width="700">
 </div>
 
-### ⚖️ Dinamiche del Team e Rischi Operativi
 
-<div align="center">
-  <img src="docs/images/kpi_workload.png" alt="Workload Trend & Burnout Risk" width="600">
-</div>
-
-<div align="center">
-  <img src="docs/images/kpi_correlation.png" alt="Correlazione Carico vs Qualità" width="500">
-</div>
-
-> [!WARNING]
-> **Aree di miglioramento operativo:** Durante lo Sprint 3 si è registrata una *Resource Capacity Utilization* superiore al 95% e uno sbilanciamento nella contribuzione del team. Come visibile dai grafici, all'aumentare estremo del carico corrisponde un'impennata di difetti (fenomeno *Velocity Mirage*). Questi indicatori suggeriscono l'adozione futura di sessioni obbligatorie di Pair Programming per mitigare il rischio di burnout.
 
 ---
 
