@@ -22,6 +22,14 @@
 
 ---
 
+> [!WARNING]  
+> **AVVISO IMPORTANTE SULLA RELEASE OPEN SOURCE**  
+> Questa versione pubblica **non è attualmente funzionante** in modalità plug-and-play a causa della rimozione intenzionale di dati sensibili, chiavi API e file di configurazione essenziali per motivi di sicurezza e privacy. 
+> 
+> Inoltre, si sottolinea che per la realizzazione di questo progetto, **oltre al materiale didattico fornito dai professori**, c'è stata un'estensiva **ricerca e raccolta di nuovi metodi di utilizzo dell'Intelligenza Artificiale (AI)**, mirata a incrementare drasticamente la qualità del software e la sua vicinanza agli standard operativi e di mercato odierni.
+
+---
+
 <details>
   <summary>Table of Contents / Indice</summary>
   <ol>
