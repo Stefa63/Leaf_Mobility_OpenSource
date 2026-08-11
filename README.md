@@ -442,6 +442,9 @@ Di seguito i principali risultati raggiunti al termine dello Sprint 3:
 - **Metriche ESG (Environmental & Governance):** Punteggio pieno sull'impatto ambientale (grazie al monitoraggio CO₂ e alla flotta 100% elettrica) e ottima governance dei dati (Audit, MFA, RBAC).
 - **Gestione dei Rischi:** Il 60% dei rischi identificati (es. debito tecnico elevato, problemi di deployment) si è materializzato, ma è stato gestito abbassando l'impatto residuo al minimo.
 
+> 💡 **Metodologia di Analisi AI-Driven:**
+> I grafici e i KPI presentati in questa sezione sono il risultato di un innovativo **processo di analisi automatizzata guidata dall'Intelligenza Artificiale**. Invece di affidarsi esclusivamente a tool di reportistica standard, i dati grezzi del progetto (log CI/CD, report del debito tecnico SQALE, metriche ESG e log di sistema) sono stati forniti a LLM avanzati. L'AI ha agito da analista dei dati: ha elaborato e normalizzato i valori, calcolato i punteggi per le metriche multidimensionali (pesando parametri ingegneristici con quelli organizzativi) e individuato correlazioni non banali (come il rapporto tra l'andamento del debito tecnico e il workload). Infine, l'agente AI ha generato in totale autonomia il codice analitico (in Python) per tradurre queste elaborazioni nei grafici che seguono, dimostrando come l'AI possa arricchire il monitoraggio e la valutazione della qualità di un progetto software.
+
 ### 🌐 Impronta di Qualità e Sostenibilità (ISO 25000)
 
 <div align="center">
