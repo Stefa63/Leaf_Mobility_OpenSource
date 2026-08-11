@@ -435,7 +435,7 @@ Considerata l'interazione con hardware IoT e servizi esterni (Google Maps, Cloud
 
 Il progetto LEAF Mobility è stato monitorato lungo tutto il suo ciclo di vita attraverso un set di metriche non puramente ingegneristiche, ma estese alla sostenibilità ambientale, sociale e di governance (ESG). I dati completi sono archiviati in [`Report/kpi_non_economici.md`](Report/kpi_non_economici.md) (e analizzati visivamente dalla dashboard interattiva `Report/dashboard_kpi_opensource.py`).
 
-Di seguito i principali risultati raggiunti al termine dello Sprint 3:
+Di seguito i principali risultati raggiunti al termine del ciclo di sviluppo iterativo:
 
 - **Eccellenza Tecnica (Debito SQALE):** Miglioramento dal Rating D (24%) iniziale all'attuale **Rating A (3,8%)**.
 - **First-Pass Rate:** L'87% dei gate automatizzati (20 su 23) è stato superato al primo tentativo.
@@ -445,44 +445,32 @@ Di seguito i principali risultati raggiunti al termine dello Sprint 3:
 > 💡 **Metodologia di Analisi AI-Driven:**
 > I grafici e i KPI presentati in questa sezione sono il risultato di un innovativo **processo di analisi automatizzata guidata dall'Intelligenza Artificiale**. Invece di affidarsi esclusivamente a tool di reportistica standard, i dati grezzi del progetto (log CI/CD, report del debito tecnico SQALE, metriche ESG e log di sistema) sono stati forniti a LLM avanzati. L'AI ha agito da analista dei dati: ha elaborato e normalizzato i valori, calcolato i punteggi per le metriche multidimensionali (pesando parametri ingegneristici con quelli organizzativi) e individuato correlazioni non banali (come il rapporto tra l'andamento del debito tecnico e il workload). Infine, l'agente AI ha generato in totale autonomia il codice analitico (in Python) per tradurre queste elaborazioni nei grafici che seguono, dimostrando come l'AI possa arricchire il monitoraggio e la valutazione della qualità di un progetto software.
 
-### 🌐 Impronta di Qualità e Sostenibilità (ISO 25000)
+### 🌐 Qualità del Prodotto (ISO 25000) ed Equilibrio Globale
+
+L'analisi si basa sulla norma **ISO/IEC 25000 (SQuaRE)**, lo standard internazionale per la valutazione della qualità del prodotto software. Valutare un software esclusivamente per la sua "assenza di bug" è riduttivo; il modello analizza invece caratteristiche interne ed esterne come manutenibilità, affidabilità, usabilità ed efficienza prestazionale. A queste si integrano le valutazioni su ESG (Environmental, Social, Governance) per fornire un quadro olistico del progetto.
 
 <div align="center">
-  <img src="docs/images/kpi_radar.png" alt="Radar Chart ISO 25000" width="500">
+  <img src="docs/images/kpi_radar.png" alt="Radar Chart ISO 25000" width="48%">
+  <img src="docs/images/kpi_pie.png" alt="Composizione del Punteggio Globale" width="48%">
 </div>
 
-### 🛡️ Qualità del Rilascio ed E2E
+### 🛡️ Affidabilità del Rilascio e Sicurezza della Supply Chain
+
+La robustezza del processo di sviluppo (DevSecOps) è monitorata attraverso due indicatori chiave: il **First-Pass Rate**, che misura la percentuale di successi "al primo tentativo" delle pipeline di integrazione continua, garantendo che le modifiche non introducano regressioni (rispettando il principio della Continuous Delivery), e la valutazione della **SBOM (Software Bill of Materials)**. Mantenere una supply chain trasparente è fondamentale (specie post-Log4j) per tracciare le dipendenze e mitigare le vulnerabilità architetturali.
 
 <div align="center">
-  <img src="docs/images/kpi_first_pass.png" alt="First-Pass Rate dei Gate CI/CD" width="500">
+  <img src="docs/images/kpi_first_pass.png" alt="First-Pass Rate dei Gate CI/CD" width="32%">
+  <img src="docs/images/kpi_e2e_tests.png" alt="E2E Integration Tests" width="32%">
+  <img src="docs/images/kpi_sbom.png" alt="SBOM & Supply Chain Health" width="32%">
 </div>
 
-<div align="center">
-  <img src="docs/images/kpi_e2e_tests.png" alt="E2E Integration Tests" width="500">
-</div>
+### 📉 Evoluzione del Debito Tecnico e Impatto sul Workload
 
-### 🕸️ Equilibrio Tecnico, Team ed ESG
+Il debito tecnico è stato quantificato seguendo il **Metodo SQALE (Software Quality Assessment based on Lifecycle Expectations)**. SQALE stima oggettivamente l'effort necessario per rimediare alle non-conformità del codice. L'analisi condotta dall'AI ha tracciato l'abbattimento progressivo di questo debito (fino al raggiungimento di un eccellente Rating A) correlandolo all'andamento del carico cognitivo e del "prompting effort" (il workload generato sull'LLM durante le fasi di coding).
 
 <div align="center">
-  <img src="docs/images/kpi_pie.png" alt="Composizione del Punteggio Globale" width="600">
-</div>
-
-### 📦 Governance e Sicurezza Supply Chain (SBOM)
-
-<div align="center">
-  <img src="docs/images/kpi_sbom.png" alt="SBOM & Supply Chain Health" width="600">
-</div>
-
-### 📉 Evoluzione del Debito Tecnico (SQALE)
-
-<div align="center">
-  <img src="docs/images/kpi_line.png" alt="Evoluzione Debito Tecnico" width="700">
-</div>
-
-### 📈 Trend dei Prompt e Utilizzo (Workload)
-
-<div align="center">
-  <img src="docs/images/kpi_workload.png" alt="Workload Trend" width="600">
+  <img src="docs/images/kpi_line.png" alt="Evoluzione Debito Tecnico" width="48%">
+  <img src="docs/images/kpi_workload.png" alt="Workload Trend" width="48%">
 </div>
 
 ---
